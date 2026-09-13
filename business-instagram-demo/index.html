@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Business Instagram | GK Digital</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f1;
+            color: #111;
+        }
+        
+        nav {
+            background: #fff;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+        
+        .nav-text {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        /* PROFILE */
+        
+        .profile {
+            background: #fff;
+            border-radius: 22px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+        }
+        
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            background: #111;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .profile h1 {
+            margin-top: 18px;
+            font-size: 30px;
+        }
+        
+        .username {
+            color: #777;
+            margin-top: 6px;
+        }
+        
+        .bio {
+            max-width: 500px;
+            margin: 15px auto;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .follow {
+            background: #111;
+            color: #fff;
+        }
+        
+        .contact {
+            border: 1px solid #111;
+            color: #111;
+        }
+        /* STATS */
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 25px;
+        }
+        
+        .stat strong {
+            display: block;
+            font-size: 20px;
+        }
+        
+        .stat span {
+            color: #777;
+            font-size: 13px;
+        }
+        /* POSTS */
+        
+        .title {
+            margin: 45px 0 20px;
+            font-size: 25px;
+        }
+        
+        .posts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .post {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            background: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 20px;
+        }
+        /* SERVICES */
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        
+        .service {
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+        }
+        
+        .service h3 {
+            margin-bottom: 10px;
+        }
+        
+        .service p {
+            color: #666;
+            line-height: 1.5;
+        }
+        /* FOOTER */
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+        }
+        /* MOBILE */
+        
+        @media(max-width:700px) {
+            nav {
+                padding: 16px 20px;
+            }
+            .nav-text {
+                display: none;
+            }
+            .profile {
+                padding: 30px 15px;
+            }
+            .profile h1 {
+                font-size: 25px;
+            }
+            .stats {
+                gap: 35px;
+            }
+            .posts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services {
+                grid-template-columns: 1fr;
+            }
+            .post {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">GK DIGITAL</div>
+        <div class="nav-text">Social Media Demo</div>
+    </nav>
+
+    <div class="container">
+
+        <!-- PROFILE -->
+
+        <section class="profile">
+
+            <div class="profile-photo">
+                V
+            </div>
+
+            <h1>VYRO Fashion</h1>
+
+            <div class="username">
+                @vyrofashion
+            </div>
+
+            <p class="bio">
+                Premium fashion for everyday confidence. Modern styles, clean looks and effortless fashion.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#" class="btn follow">
+                Follow
+            </a>
+
+                <a href="#" class="btn contact">
+                Contact
+            </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>124</strong>
+                    <span>Posts</span>
+                </div>
+
+                <div class="stat">
+                    <strong>8.5K</strong>
+                    <span>Followers</span>
+                </div>
+
+                <div class="stat">
+                    <strong>320</strong>
+                    <span>Following</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSTAGRAM POSTS -->
+
+        <h2 class="title">
+            Instagram Content
+        </h2>
+
+        <section class="posts">
+
+            <div class="post">
+                NEW<br>ARRIVALS
+            </div>
+
+            <div class="post">
+                PREMIUM<br>LOOKS
+            </div>
+
+            <div class="post">
+                STYLE<br>YOUR WAY
+            </div>
+
+            <div class="post">
+                WEEKEND<br>FIT
+            </div>
+
+            <div class="post">
+                TRENDING<br>NOW
+            </div>
+
+            <div class="post">
+                SHOP<br>THE LOOK
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <h2 class="title">
+            What GK Digital Can Do
+        </h2>
+
+        <section class="services">
+
+            <div class="service">
+                <h3>Instagram Setup</h3>
+                <p>
+                    Professional profile setup with bio, highlights and business information.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Post Designs</h3>
+                <p>
+                    Clean and attractive social media designs for regular business promotion.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Content Planning</h3>
+                <p>
+                    Simple content ideas to keep your business profile active and professional.
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 GK Digital · Business Instagram Demo
+    </footer>
+
+</body>
+
+</html>

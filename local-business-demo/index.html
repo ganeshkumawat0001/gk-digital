@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechZone Electronics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f3;
+            color: #111;
+            overflow-x: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* NAVBAR */
+        
+        nav {
+            height: 75px;
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-inner {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #555;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        /* HERO */
+        
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            background: #111;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 750px;
+        }
+        
+        .badge {
+            display: inline-block;
+            border: 1px solid #555;
+            padding: 9px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 82px);
+            line-height: .95;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 span {
+            color: #aaa;
+        }
+        
+        .hero p {
+            color: #bbb;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 35px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #111;
+        }
+        
+        .btn-outline {
+            border: 1px solid #666;
+            color: white;
+        }
+        /* SECTION */
+        
+        section {
+            padding: 90px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 45px;
+        }
+        
+        .section-title small {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #777;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+            letter-spacing: -1px;
+        }
+        /* PRODUCTS */
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: .3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+        }
+        
+        .product-image {
+            height: 260px;
+            background: #e9e7e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #777;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .product-info {
+            padding: 22px;
+        }
+        
+        .product-info small {
+            color: #777;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        
+        .product-info h3 {
+            margin: 9px 0;
+            font-size: 21px;
+        }
+        
+        .product-info p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 17px;
+        }
+        
+        .product-btn {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 12px 17px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        /* WHY US */
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .feature {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 12px;
+        }
+        
+        .feature-number {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        /* ABOUT */
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: 45px;
+            margin: 12px 0 20px;
+        }
+        
+        .about p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+        
+        .about-box {
+            background: #111;
+            color: white;
+            padding: 45px;
+            border-radius: 15px;
+        }
+        
+        .about-box h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .about-box p {
+            color: #bbb;
+        }
+        /* LOCATION */
+        
+        .location {
+            background: #111;
+            color: white;
+        }
+        
+        .location-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .location-card {
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 35px;
+        }
+        
+        .location-card h3 {
+            margin-bottom: 15px;
+            font-size: 23px;
+        }
+        
+        .location-card p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        /* CTA */
+        
+        .cta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 60px 30px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        
+        .cta p {
+            color: #666;
+            margin-bottom: 28px;
+        }
+        
+        .cta .btn {
+            background: #111;
+            color: white;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #0d0d0d;
+            color: white;
+            padding: 35px 0;
+        }
+        
+        .footer-inner {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        footer p {
+            color: #888;
+            font-size: 13px;
+        }
+        /* MOBILE */
+        
+        @media(max-width:850px) {
+            .nav-inner {
+                width: 92%;
+            }
+            nav {
+                height: 65px;
+            }
+            .nav-links {
+                gap: 12px;
+                font-size: 11px;
+            }
+            .hero {
+                min-height: 75vh;
+            }
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+            section {
+                padding: 65px 0;
+            }
+            .section-title h2 {
+                font-size: 34px;
+            }
+            /* 2 PRODUCTS PER ROW */
+            .products {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+            .product-image {
+                height: 180px;
+            }
+            .product-info {
+                padding: 15px;
+            }
+            .product-info h3 {
+                font-size: 16px;
+            }
+            .product-info p {
+                font-size: 12px;
+            }
+            .price {
+                font-size: 16px;
+            }
+            .product-btn {
+                padding: 10px 12px;
+                font-size: 11px;
+            }
+            /* FEATURES */
+            .features {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+            .feature {
+                padding: 20px;
+            }
+            .feature h3 {
+                font-size: 17px;
+            }
+            .feature p {
+                font-size: 12px;
+            }
+            /* ABOUT */
+            .about {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about h2 {
+                font-size: 36px;
+            }
+            /* LOCATION */
+            .location-box {
+                grid-template-columns: 1fr;
+            }
+            /* CTA */
+            .cta {
+                padding: 45px 20px;
+            }
+            .cta h2 {
+                font-size: 32px;
+            }
+            /* FOOTER */
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media(max-width:400px) {
+            .nav-links {
+                gap: 8px;
+                font-size: 10px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .products,
+            .features {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .product-image {
+                height: 150px;
+            }
+            .product-info {
+                padding: 12px;
+            }
+            .product-info h3 {
+                font-size: 14px;
+            }
+            .product-info p {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="nav-inner">
+
+            <div class="logo">
+                TECHZONE <span>ELECTRONICS</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    YOUR LOCAL ELECTRONICS STORE
+                </div>
+
+                <h1>
+                    TECH FOR<br>
+                    <span>EVERYDAY LIFE.</span>
+                </h1>
+
+                <p>
+                    Discover smartphones, accessories, audio products, chargers and everyday electronics — all at your trusted local electronics store.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#products" class="btn btn-primary">
+                        Explore Products
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Store
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>OUR PRODUCTS</small>
+
+                <h2>Featured Electronics</h2>
+
+            </div>
+
+
+            <div class="products">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="wirelesseurbuds.png" alt="wirelesseurbuds">
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>AUDIO</small>
+
+                        <h3>Wireless Earbuds</h3>
+
+                        <p>
+                            Compact wireless earbuds with clear sound and everyday comfort.
+                        </p>
+
+                        <div class="price">
+                            ₹1,499
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="charger.png" alt="charger">
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>ACCESSORIES</small>
+
+                        <h3>Fast Charger</h3>
+
+                        <p>
+                            Reliable fast charging solution for your everyday devices.
+                        </p>
+
+                        <div class="price">
+                            ₹699
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="smartphone.png" alt="smartphone">
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>SMARTPHONES</small>
+
+                        <h3>Smartphone</h3>
+
+                        <p>
+                            Modern smartphone options for work, entertainment and daily use.
+                        </p>
+
+                        <div class="price">
+                            Starting ₹9,999
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 4 - LAPTOP -->
+
+                <div class="product">
+
+                    <div class="product-image">
+
+                        <img src="laptop.png" alt="Laptop">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>COMPUTERS</small>
+
+                        <h3>Laptop</h3>
+
+                        <p>
+                            Everyday laptops suitable for study, work and entertainment.
+                        </p>
+
+                        <div class="price">
+                            Starting ₹29,999
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 5 - POWER BANK -->
+
+                <div class="product">
+
+                    <div class="product-image">
+
+                        <img src="power-bank.png" alt="Power Bank">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>ACCESSORIES</small>
+
+                        <h3>Power Bank</h3>
+
+                        <p>
+                            Portable power for your smartphone when you are on the go.
+                        </p>
+
+                        <div class="price">
+                            ₹999
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT 6 -->
+
+                <div class="product">
+
+                    <div class="product-image">
+                        <img src="headset.png" alt="headset">
+                    </div>
+
+                    <div class="product-info">
+
+                        <small>GAMING</small>
+
+                        <h3>Gaming Headset</h3>
+
+                        <p>
+                            Comfortable headset with immersive audio for gaming and entertainment.
+                        </p>
+
+                        <div class="price">
+                            ₹1,999
+                        </div>
+
+                        <a href="https://wa.me/917976987157" target="_blank" class="product-btn">
+                            Enquire Now →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small>WHY TECHZONE</small>
+
+                <h2>Simple. Local. Reliable.</h2>
+
+            </div>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <h3>Trusted Local Store</h3>
+
+                    <p>
+                        Get your everyday electronics from a store you can visit personally.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <h3>Wide Product Range</h3>
+
+                    <p>
+                        Smartphones, accessories, audio products and more in one place.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <h3>Easy Enquiry</h3>
+
+                    <p>
+                        Contact us directly through WhatsApp for product availability and details.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-number">
+                        04
+                    </div>
+
+                    <h3>Personal Support</h3>
+
+                    <p>
+                        Get help choosing the right product according to your requirements.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="about">
+
+                <div>
+
+                    <small>ABOUT THE STORE</small>
+
+                    <h2>Your Local Tech Partner.</h2>
+
+                    <p>
+                        TechZone Electronics is a demo local-business website created by GK Digital to show how an offline electronics store can build a professional online presence.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Customers can explore products, learn about the store and contact the business directly from their phone.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>Offline → Online</h3>
+
+                    <p>
+                        A professional website helps local businesses become easier to discover, easier to contact and easier to trust.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOCATION -->
+
+    <section class="location">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <small style="color:#888;">
+                    VISIT OUR STORE
+                </small>
+
+                <h2>Find Us Easily</h2>
+
+            </div>
+
+
+            <div class="location-box">
+
+
+                <div class="location-card">
+
+                    <h3>📍 Store Location</h3>
+
+                    <p>
+                        Main Market,<br> Your City, Rajasthan<br> India
+                    </p>
+
+                </div>
+
+
+                <div class="location-card">
+
+                    <h3>📞 Contact</h3>
+
+                    <p>
+                        Phone: +91 79769 87157
+                        <br><br> WhatsApp available for product enquiries.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT CTA -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="cta">
+
+                <h2>Need Something?</h2>
+
+                <p>
+                    Contact TechZone Electronics and ask about product availability, pricing or offers.
+                </p>
+
+                <a href="https://wa.me/917976987157" target="_blank" class="btn">
+                    💬 Chat on WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <div>
+                <strong>TECHZONE ELECTRONICS</strong>
+            </div>
+
+            <p>
+                Demo Website • Created by GK Digital
+            </p>
+
+            <p>
+                © 2026 TechZone Electronics
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

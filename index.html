@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GK Digital | We Take Offline Businesses Online</title>
+
+    <meta name="description" content="GK Digital helps local businesses build a professional online presence through websites, social media, digital catalogues and business setup.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050505;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* ================= NAVBAR ================= */
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #222;
+        }
+        
+        nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        .logo span {
+            color: #aaa;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #ccc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+        }
+        /* ================= HERO ================= */
+        
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: #ffffff;
+            opacity: 0.04;
+            filter: blur(100px);
+            border-radius: 50%;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #aaa;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            max-width: 950px;
+            margin: auto;
+            letter-spacing: -4px;
+        }
+        
+        .hero h1 span {
+            color: #888;
+        }
+        
+        .hero p {
+            max-width: 650px;
+            margin: 30px auto;
+            color: #aaa;
+            font-size: 18px;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #000;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            border: 1px solid #333;
+            color: #fff;
+        }
+        
+        .btn-secondary:hover {
+            background: #111;
+        }
+        /* ================= HIGHLIGHTS ================= */
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        
+        .stat-box {
+            padding: 45px 20px;
+            text-align: center;
+            border-right: 1px solid #222;
+        }
+        
+        .stat-box:last-child {
+            border-right: none;
+        }
+        
+        .stat-box h3 {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+        
+        .stat-box p {
+            color: #888;
+            font-size: 14px;
+        }
+        /* ================= GENERAL SECTION ================= */
+        
+        section {
+            padding: 110px 0;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-heading h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        
+        .section-heading p {
+            color: #888;
+            max-width: 600px;
+            margin: auto;
+        }
+        /* ================= SERVICES ================= */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .service-card {
+            padding: 35px;
+            border: 1px solid #222;
+            border-radius: 15px;
+            background: #0b0b0b;
+            transition: 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-7px);
+            border-color: #444;
+        }
+        
+        .service-number {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            color: #888;
+            font-size: 14px;
+        }
+        /* ================= PROCESS ================= */
+        
+        .process {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        
+        .process-step {
+            border-top: 1px solid #333;
+            padding-top: 25px;
+        }
+        
+        .process-step span {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .process-step h3 {
+            margin: 12px 0;
+        }
+        
+        .process-step p {
+            color: #888;
+            font-size: 13px;
+        }
+        /* ================= PORTFOLIO ================= */
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .portfolio-card {
+            min-height: 280px;
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: linear-gradient(145deg, #111, #080808);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: #444;
+        }
+        
+        .portfolio-card small {
+            color: #666;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        
+        .portfolio-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .portfolio-card p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-btn {
+            display: inline-block;
+            width: fit-content;
+            padding: 11px 20px;
+            border: 1px solid #444;
+            border-radius: 7px;
+            color: #fff;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .demo-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+        /* ================= ABOUT ================= */
+        
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            color: #999;
+            margin-bottom: 15px;
+        }
+        
+        .about-box {
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 40px;
+            background: #0b0b0b;
+        }
+        
+        .about-box h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .about-box p {
+            color: #888;
+        }
+        /* ================= CTA ================= */
+        
+        .cta {
+            text-align: center;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 80px 30px;
+            background: #0b0b0b;
+        }
+        
+        .cta h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            color: #888;
+            margin-bottom: 30px;
+        }
+        /* ================= FOOTER ================= */
+        
+        footer {
+            border-top: 1px solid #222;
+            padding: 35px 0;
+            margin-top: 100px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        footer p {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            color: #888;
+            font-size: 13px;
+        }
+        /* ================= TABLET ================= */
+        
+        @media (max-width: 1000px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+            .about {
+                gap: 40px;
+            }
+        }
+        /* ================= MOBILE ================= */
+        
+        @media (max-width: 700px) {
+            .container {
+                width: 92%;
+            }
+            nav {
+                min-height: 65px;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            /* HERO */
+            .hero {
+                min-height: auto;
+                padding: 80px 0 65px;
+            }
+            .hero::before {
+                width: 300px;
+                height: 300px;
+            }
+            .badge {
+                font-size: 9px;
+                padding: 7px 11px;
+                margin-bottom: 20px;
+                letter-spacing: 0.5px;
+            }
+            .hero h1 {
+                font-size: 42px;
+                line-height: 1.03;
+                letter-spacing: -2px;
+                max-width: 100%;
+            }
+            .hero p {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 22px auto;
+                max-width: 100%;
+            }
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .buttons .btn {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
+            }
+            /* HIGHLIGHTS */
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .stat-box {
+                padding: 25px 10px;
+                border-right: 1px solid #222;
+                border-bottom: 1px solid #222;
+            }
+            .stat-box:nth-child(2n) {
+                border-right: none;
+            }
+            .stat-box h3 {
+                font-size: 26px;
+            }
+            .stat-box p {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+            /* SECTIONS */
+            section {
+                padding: 70px 0;
+            }
+            .section-heading {
+                margin-bottom: 35px;
+            }
+            .section-heading h2 {
+                font-size: 32px;
+                line-height: 1.1;
+            }
+            .section-heading p {
+                font-size: 13px;
+            }
+            /* SERVICES */
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+            .service-card {
+                padding: 20px 14px;
+                border-radius: 12px;
+                min-width: 0;
+            }
+            .service-number {
+                font-size: 11px;
+                margin-bottom: 12px;
+            }
+            .service-card h3 {
+                font-size: 17px;
+                line-height: 1.25;
+                margin-bottom: 10px;
+            }
+            .service-card p {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+            /* PROCESS */
+            .process {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 25px 15px;
+            }
+            .process-step {
+                padding-top: 17px;
+                min-width: 0;
+            }
+            .process-step span {
+                font-size: 11px;
+            }
+            .process-step h3 {
+                font-size: 17px;
+                margin: 8px 0;
+            }
+            .process-step p {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+            /* PORTFOLIO */
+            .portfolio-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+            .portfolio-card {
+                min-height: 250px;
+                padding: 18px 14px;
+                border-radius: 12px;
+                min-width: 0;
+            }
+            .portfolio-card small {
+                font-size: 8px;
+                line-height: 1.3;
+            }
+            .portfolio-card h3 {
+                font-size: 17px;
+                line-height: 1.25;
+                margin-bottom: 10px;
+            }
+            .portfolio-card p {
+                font-size: 11px;
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            .demo-btn {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            /* ABOUT */
+            .about {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .about h2 {
+                font-size: 32px;
+                line-height: 1.15;
+            }
+            .about p {
+                font-size: 13px;
+            }
+            .about-box {
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+            .about-box h3 {
+                font-size: 21px;
+            }
+            /* CONTACT */
+            .cta {
+                padding: 50px 18px;
+                border-radius: 15px;
+            }
+            .cta h2 {
+                font-size: 32px;
+                line-height: 1.15;
+            }
+            .cta p {
+                font-size: 13px;
+            }
+            /* FOOTER */
+            footer {
+                margin-top: 50px;
+                padding: 28px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .footer-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+        /* ================= VERY SMALL PHONES ================= */
+        
+        @media (max-width: 380px) {
+            .hero {
+                padding-top: 65px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .badge {
+                font-size: 8px;
+            }
+            .section-heading h2,
+            .about h2,
+            .cta h2 {
+                font-size: 30px;
+            }
+            .service-card,
+            .portfolio-card {
+                padding: 17px 12px;
+            }
+            .service-card h3,
+            .portfolio-card h3 {
+                font-size: 15px;
+            }
+            .service-card p,
+            .portfolio-card p,
+            .process-step p {
+                font-size: 10px;
+            }
+            .stat-box p {
+                font-size: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a href="#" class="logo">
+                    GK <span>DIGITAL</span>
+                </a>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#work">Our Work</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="badge">
+                GK DIGITAL — DIGITAL BUSINESS SOLUTIONS
+            </div>
+
+            <h1>
+                We Take <span>Offline Businesses</span> Online.
+            </h1>
+
+            <p>
+                We help local businesses build a professional digital presence through websites, social media, digital catalogues and more.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contact" class="btn btn-primary">
+                    Start a Project
+                </a>
+
+                <a href="#services" class="btn btn-secondary">
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HIGHLIGHTS ================= -->
+
+    <div class="container">
+
+        <div class="stats">
+
+            <div class="stat-box">
+
+                <h3>01</h3>
+
+                <p>
+                    Simple Approach
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>06</h3>
+
+                <p>
+                    Digital Services
+                </p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h3>100%</h3>
+
+                <p>
+                    Designed for Business Growth
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    What We Do
+                </h2>
+
+                <p>
+                    Practical digital solutions designed to help local businesses build a stronger online presence.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Business Website
+                    </h3>
+
+                    <p>
+                        Professional websites that introduce your business, showcase your products and help customers contact you.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Social Media Design
+                    </h3>
+
+                    <p>
+                        Clean and attractive posts, offers and promotional creatives for your business.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Instagram Setup
+                    </h3>
+
+                    <p>
+                        Professional Instagram profile setup with bio, highlights and a consistent visual identity.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        04
+                    </div>
+
+                    <h3>
+                        WhatsApp Business
+                    </h3>
+
+                    <p>
+                        Business profile setup and basic customer communication structure through WhatsApp Business.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Digital Catalogue
+                    </h3>
+
+                    <p>
+                        Easy-to-share digital catalogues that help customers explore your products online.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Google Business Setup
+                    </h3>
+
+                    <p>
+                        Help your business become easier to discover on Google with a professional business profile.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROCESS ================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    How We Work
+                </h2>
+
+                <p>
+                    A simple process from understanding your business to building its digital presence.
+                </p>
+
+            </div>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Understand
+                    </h3>
+
+                    <p>
+                        We understand your business, customers and goals.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Plan
+                    </h3>
+
+                    <p>
+                        We decide what digital solutions your business actually needs.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Design
+                    </h3>
+
+                    <p>
+                        We create a clean and professional digital identity.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Build
+                    </h3>
+
+                    <p>
+                        We build the website and digital business setup.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <span>
+                        05
+                    </span>
+
+                    <h3>
+                        Launch
+                    </h3>
+
+                    <p>
+                        Your business gets a professional online presence.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PORTFOLIO ================= -->
+
+    <section id="work">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <h2>
+                    Our Work
+                </h2>
+
+                <p>
+                    Demo projects created by GK Digital to showcase our approach.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-grid">
+
+
+                <!-- ================= VYRO ================= -->
+
+                <div class="portfolio-card">
+
+                    <small>
+                        DEMO PROJECT • CLOTHING
+                    </small>
+
+                    <h3>
+                        VYRO — Premium Clothing Store
+                    </h3>
+
+                    <p>
+                        A modern fashion website demo designed for a premium clothing brand.
+                    </p>
+
+                    <a href="./clothing-demo/index.html" target="_blank" class="demo-btn">
+
+                        View Demo →
+
+                    </a>
+
+                </div>
+
+
+                <!-- ================= TECHZONE ================= -->
+
+                <div class="portfolio-card">
+
+                    <small>
+                        DEMO PROJECT • ELECTRONICS
+                    </small>
+
+                    <h3>
+                        TECHZONE — Electronics Store
+                    </h3>
+
+                    <p>
+                        A modern electronics store website designed for local businesses selling smartphones, accessories and gadgets.
+                    </p>
+
+                    <a href="./local-business-demo/index.html" target="_blank" class="demo-btn">
+
+                        View Demo →
+
+                    </a>
+
+                </div>
+
+
+                <!-- ================= PRODUCT CATALOGUE ================= -->
+
+                <div class="portfolio-card">
+
+                    <small>
+                        DEMO PROJECT • DIGITAL CATALOGUE
+                    </small>
+
+                    <h3>
+                        Product Catalogue
+                    </h3>
+
+                    <p>
+                        A clean digital product catalogue concept for businesses to showcase and share their products online.
+                    </p>
+
+                    <a href="./product-catalogue-demo/index.html" target="_blank" class="demo-btn">
+
+                        View Demo →
+
+                    </a>
+
+                </div>
+
+
+                <!-- ================= INSTAGRAM ================= -->
+
+                <div class="portfolio-card">
+
+                    <small>
+                        DEMO PROJECT • SOCIAL MEDIA
+                    </small>
+
+                    <h3>
+                        Business Instagram
+                    </h3>
+
+                    <p>
+                        Social media design and profile setup concept for a modern business.
+                    </p>
+
+                    <a href="./business-instagram-demo/index.html" target="_blank" class="demo-btn">
+
+                        View Demo →
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="about">
+
+                <div>
+
+                    <h2>
+                        Built for Businesses That Want to Grow.
+                    </h2>
+
+                    <p>
+                        GK Digital is a digital business solutions company focused on helping offline businesses move online.
+                    </p>
+
+                    <p>
+                        From a professional website to social media and digital catalogues, we create simple solutions that make businesses easier to discover and connect with.
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>
+                        Offline → Online
+                    </h3>
+
+                    <p>
+                        Our goal is simple: help businesses build a strong digital presence and create better opportunities to reach their customers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="cta">
+
+                <h2>
+                    Ready to Go Online?
+                </h2>
+
+                <p>
+                    Let's build a professional digital presence for your business.
+                </p>
+
+                <p style="margin-top: 25px; color: #fff;">
+
+                    <strong>
+                        Ganesh Kumawat
+                    </strong>
+
+                    <br>
+
+                    <span style="color: #888;">
+                        Founder &amp; Director, GK Digital
+                    </span>
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a href="https://wa.me/917976987157" target="_blank" class="btn btn-primary">
+
+                        Contact on WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <p>
+                    © 2026 GK Digital. All rights reserved.
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="#services">
+                        Services
+                    </a>
+
+                    <a href="#work">
+                        Work
+                    </a>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

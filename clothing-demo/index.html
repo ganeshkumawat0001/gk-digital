@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VYRO | Premium Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f5f0;
+            color: #111;
+        }
+        /* ================= NAVBAR ================= */
+        
+        nav {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(247, 245, 240, 0.95);
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #111;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.55;
+        }
+        /* ================= HERO ================= */
+        
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient( rgba(247, 245, 240, 0.90), rgba(247, 245, 240, 0.90));
+        }
+        
+        .hero-content {
+            max-width: 850px;
+        }
+        
+        .tag {
+            display: inline-block;
+            border: 1px solid #222;
+            padding: 8px 18px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(50px, 9vw, 110px);
+            line-height: 0.9;
+            letter-spacing: -5px;
+            margin-bottom: 30px;
+        }
+        
+        .hero p {
+            max-width: 550px;
+            margin: auto;
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 32px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            background: #333;
+        }
+        /* ================= SECTION ================= */
+        
+        section {
+            padding: 100px 7%;
+        }
+        
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 45px;
+        }
+        
+        .section-title h2 {
+            font-size: 45px;
+            letter-spacing: -2px;
+        }
+        
+        .section-title p {
+            color: #777;
+            font-size: 14px;
+        }
+        /* ================= PRODUCTS ================= */
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .product {
+            background: #fff;
+            border: 1px solid #e4e1db;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 430px;
+            background: #eee;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s;
+        }
+        
+        .product:hover .product-image img {
+            transform: scale(1.04);
+        }
+        
+        .product-info {
+            padding: 22px;
+        }
+        
+        .product-info h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+        
+        .product-info p {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+        /* ================= SIZES ================= */
+        
+        .size-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .sizes {
+            display: flex;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+        
+        .size {
+            width: 38px;
+            height: 35px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            transition: 0.2s;
+        }
+        
+        .size:hover,
+        .size.active {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+        /* ================= BUTTONS ================= */
+        
+        .product-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .product-btn {
+            flex: 1;
+            padding: 12px 8px;
+            border: none;
+            background: #111;
+            color: white;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .product-btn:hover {
+            background: #333;
+        }
+        
+        .whatsapp-btn {
+            background: #222;
+        }
+        /* ================= ABOUT ================= */
+        
+        .about {
+            background: #111;
+            color: white;
+        }
+        
+        .about-container {
+            max-width: 900px;
+        }
+        
+        .about h2 {
+            font-size: 55px;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+        
+        .about p {
+            color: #aaa;
+            max-width: 700px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        /* ================= CTA ================= */
+        
+        .cta {
+            text-align: center;
+            padding: 110px 20px;
+        }
+        
+        .cta h2 {
+            font-size: clamp(40px, 7vw, 75px);
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+        /* ================= FOOTER ================= */
+        
+        footer {
+            background: #111;
+            color: white;
+            padding: 35px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        footer p {
+            color: #888;
+            font-size: 12px;
+        }
+        
+        footer strong {
+            letter-spacing: 3px;
+        }
+        /* ================= TABLET ================= */
+        
+        @media (max-width: 900px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .product-image {
+                height: 400px;
+            }
+        }
+        /* ================= MOBILE ================= */
+        
+        @media (max-width: 600px) {
+            nav {
+                padding: 17px 5%;
+            }
+            .logo {
+                font-size: 19px;
+                letter-spacing: 3px;
+            }
+            .nav-links {
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 10px;
+            }
+            .hero {
+                min-height: 70vh;
+                padding: 60px 18px;
+            }
+            .hero h1 {
+                font-size: 52px;
+                letter-spacing: -3px;
+            }
+            .hero p {
+                font-size: 13px;
+            }
+            section {
+                padding: 65px 5%;
+            }
+            .section-title {
+                display: block;
+            }
+            .section-title h2 {
+                font-size: 34px;
+                margin-bottom: 8px;
+            }
+            /* IMPORTANT:
+               MOBILE PAR 2 PRODUCTS EK ROW ME */
+            .products {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+            .product {
+                min-width: 0;
+            }
+            .product-image {
+                height: 260px;
+            }
+            .product-info {
+                padding: 12px;
+            }
+            .product-info h3 {
+                font-size: 14px;
+                line-height: 1.3;
+            }
+            .product-info p {
+                font-size: 10px;
+                line-height: 1.4;
+            }
+            .price {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+            .size-title {
+                font-size: 10px;
+            }
+            .sizes {
+                gap: 4px;
+                margin-bottom: 12px;
+            }
+            .size {
+                width: 27px;
+                height: 28px;
+                font-size: 9px;
+            }
+            .product-buttons {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .product-btn {
+                padding: 9px 4px;
+                font-size: 9px;
+            }
+            .about h2 {
+                font-size: 40px;
+            }
+            .about p {
+                font-size: 14px;
+            }
+            .cta {
+                padding: 75px 15px;
+            }
+            .cta h2 {
+                font-size: 45px;
+            }
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            VYRO
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#collection">Collection</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                PREMIUM STREETWEAR
+            </span>
+
+            <h1>
+                WEAR YOUR<br> CONFIDENCE.
+            </h1>
+
+            <p>
+                Modern clothing designed for people who believe style is more than just fashion.
+            </p>
+
+            <a href="#collection" class="hero-btn">
+                EXPLORE COLLECTION
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COLLECTION ================= -->
+
+    <section id="collection">
+
+        <div class="section-title">
+
+            <div>
+
+                <p>
+                    VYRO COLLECTION
+                </p>
+
+                <h2>
+                    Latest Drops
+                </h2>
+
+            </div>
+
+            <p>
+                Premium everyday essentials.
+            </p>
+
+        </div>
+
+
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="jacket.jpg" alt="VYRO Premium Jacket">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Utility Jacket
+                    </h3>
+
+                    <p>
+                        Premium everyday utility jacket.
+                    </p>
+
+                    <div class="price">
+                        ₹1,499
+                    </div>
+
+
+                    <div class="size-title">
+                        SELECT SIZE
+                    </div>
+
+                    <div class="sizes">
+
+                        <button class="size">
+                            S
+                        </button>
+
+                        <button class="size">
+                            M
+                        </button>
+
+                        <button class="size">
+                            L
+                        </button>
+
+                        <button class="size">
+                            XL
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-buttons">
+
+                        <a href="#contact" class="product-btn">
+                            BUY NOW
+                        </a>
+
+                        <a href="https://wa.me/91XXXXXXXXXX" class="product-btn whatsapp-btn">
+                            WHATSAPP
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="outfit.jpg" alt="VYRO Premium Outfit">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Premium Casual Set
+                    </h3>
+
+                    <p>
+                        Clean and modern casual outfit.
+                    </p>
+
+                    <div class="price">
+                        ₹1,799
+                    </div>
+
+
+                    <div class="size-title">
+                        SELECT SIZE
+                    </div>
+
+                    <div class="sizes">
+
+                        <button class="size">
+                            S
+                        </button>
+
+                        <button class="size">
+                            M
+                        </button>
+
+                        <button class="size">
+                            L
+                        </button>
+
+                        <button class="size">
+                            XL
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-buttons">
+
+                        <a href="#contact" class="product-btn">
+                            BUY NOW
+                        </a>
+
+                        <a href="https://wa.me/91XXXXXXXXXX" class="product-btn whatsapp-btn">
+                            WHATSAPP
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="hoodie.jpg" alt="VYRO Color Block Hoodie">
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <h3>
+                        Color Block Hoodie
+                    </h3>
+
+                    <p>
+                        Comfortable oversized streetwear hoodie.
+                    </p>
+
+                    <div class="price">
+                        ₹1,299
+                    </div>
+
+
+                    <div class="size-title">
+                        SELECT SIZE
+                    </div>
+
+                    <div class="sizes">
+
+                        <button class="size">
+                            S
+                        </button>
+
+                        <button class="size">
+                            M
+                        </button>
+
+                        <button class="size">
+                            L
+                        </button>
+
+                        <button class="size">
+                            XL
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-buttons">
+
+                        <a href="#contact" class="product-btn">
+                            BUY NOW
+                        </a>
+
+                        <a href="https://wa.me/91XXXXXXXXXX" class="product-btn whatsapp-btn">
+                            WHATSAPP
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <div class="about-container">
+
+            <p>
+                ABOUT VYRO
+            </p>
+
+            <h2>
+                STYLE WITHOUT<br> COMPROMISE.
+            </h2>
+
+            <p>
+                VYRO is a modern fashion concept focused on premium everyday clothing, clean designs and confident streetwear.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="cta" id="contact">
+
+        <h2>
+            READY TO<br> UPGRADE YOUR STYLE?
+        </h2>
+
+        <p>
+            Discover the latest VYRO collection.
+        </p>
+
+        <a href="https://wa.me/91XXXXXXXXXX" class="hero-btn">
+            ORDER ON WHATSAPP
+        </a>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <strong>
+            VYRO
+        </strong>
+
+        <p>
+            © 2026 VYRO. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+        const sizeButtons = document.querySelectorAll(".size");
+
+        sizeButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                const parent = button.parentElement;
+
+                parent
+                    .querySelectorAll(".size")
+                    .forEach(function(item) {
+
+                        item.classList.remove("active");
+
+                    });
+
+                button.classList.add("active");
+
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

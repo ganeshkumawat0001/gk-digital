@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Catalogue | GK Digital</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f2;
+            color: #171717;
+        }
+        /* NAVBAR */
+        
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            font-weight: 400;
+            color: #777;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+        /* HERO */
+        
+        .hero {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+            padding: 70px 22px 45px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #111;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 70px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+        
+        .hero p {
+            max-width: 620px;
+            margin: 20px auto;
+            color: #666;
+            line-height: 1.7;
+        }
+        /* CATEGORIES */
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+        
+        .categories button {
+            border: 1px solid #ddd;
+            background: white;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .categories button:hover,
+        .categories button.active {
+            background: #111;
+            color: white;
+            border-color: #111;
+        }
+        /* PRODUCTS */
+        
+        .products {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 22px 80px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: .25s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px #00000012;
+        }
+        
+        .product-img {
+            height: 240px;
+            background: #ededeb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+        }
+        
+        .info {
+            padding: 20px;
+        }
+        
+        .tag {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .info h2 {
+            font-size: 20px;
+            margin: 8px 0;
+        }
+        
+        .desc {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.5;
+            min-height: 40px;
+        }
+        
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: block;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+        
+        .btn:hover {
+            background: #333;
+        }
+        /* ABOUT */
+        
+        .about {
+            background: #111;
+            color: white;
+            padding: 65px 22px;
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 30px;
+        }
+        
+        .about p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: #aaa;
+            line-height: 1.7;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #080808;
+            color: #777;
+            text-align: center;
+            padding: 25px;
+            font-size: 12px;
+        }
+        /* MOBILE */
+        
+        @media(max-width:750px) {
+            .nav {
+                padding: 15px;
+            }
+            .nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+            .hero {
+                padding: 55px 18px 35px;
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .product-img {
+                height: 180px;
+                font-size: 48px;
+            }
+            .info {
+                padding: 14px;
+            }
+            .info h2 {
+                font-size: 16px;
+            }
+            .price {
+                font-size: 17px;
+            }
+            .btn {
+                padding: 10px 5px;
+            }
+        }
+        
+        @media(max-width:430px) {
+            .product-img {
+                height: 150px;
+            }
+            .desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav">
+
+            <div class="logo">
+                GK <span>DIGITAL</span>
+            </div>
+
+            <div>
+                <a href="#products">Catalogue</a>
+                <a href="#about">About</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="badge">
+            DIGITAL PRODUCT CATALOGUE
+        </div>
+
+        <h1>
+            Show. Share.<br>Sell.
+        </h1>
+
+        <p>
+            A clean digital catalogue that helps local businesses showcase their products and receive customer enquiries online.
+        </p>
+
+        <!-- CATEGORY BUTTONS -->
+        <div class="categories">
+
+            <button class="active" onclick="filterProducts('all', this)">
+            All
+        </button>
+
+            <button onclick="filterProducts('fashion', this)">
+            Fashion
+        </button>
+
+            <button onclick="filterProducts('electronics', this)">
+            Electronics
+        </button>
+
+            <button onclick="filterProducts('accessories', this)">
+            Accessories
+        </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+
+        <div class="grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="card product" data-category="fashion">
+
+                <div class="product-img">
+                    👕
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Fashion
+                    </div>
+
+                    <h2>
+                        Premium Oversized Tee
+                    </h2>
+
+                    <p class="desc">
+                        Comfortable oversized t-shirt for everyday style.
+                    </p>
+
+                    <div class="price">
+                        ₹799
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Premium%20Oversized%20Tee." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="card product" data-category="fashion">
+
+                <div class="product-img">
+                    🧥
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Fashion
+                    </div>
+
+                    <h2>
+                        Classic Denim Jacket
+                    </h2>
+
+                    <p class="desc">
+                        Premium denim jacket with a clean modern look.
+                    </p>
+
+                    <div class="price">
+                        ₹1,499
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Classic%20Denim%20Jacket." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="card product" data-category="electronics">
+
+                <div class="product-img">
+                    🎧
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Electronics
+                    </div>
+
+                    <h2>
+                        Wireless Earbuds
+                    </h2>
+
+                    <p class="desc">
+                        Compact wireless earbuds for music and calls.
+                    </p>
+
+                    <div class="price">
+                        ₹999
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Wireless%20Earbuds." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="card product" data-category="electronics">
+
+                <div class="product-img">
+                    ⌨️
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Electronics
+                    </div>
+
+                    <h2>
+                        Mechanical Keyboard
+                    </h2>
+
+                    <p class="desc">
+                        Stylish mechanical keyboard designed for work and gaming.
+                    </p>
+
+                    <div class="price">
+                        ₹2,499
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Mechanical%20Keyboard." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="card product" data-category="accessories">
+
+                <div class="product-img">
+                    🕶️
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Accessories
+                    </div>
+
+                    <h2>
+                        Classic Sunglasses
+                    </h2>
+
+                    <p class="desc">
+                        Minimal sunglasses designed for everyday use.
+                    </p>
+
+                    <div class="price">
+                        ₹599
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Classic%20Sunglasses." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div class="card product" data-category="accessories">
+
+                <div class="product-img">
+                    🎒
+                </div>
+
+                <div class="info">
+
+                    <div class="tag">
+                        Accessories
+                    </div>
+
+                    <h2>
+                        Everyday Backpack
+                    </h2>
+
+                    <p class="desc">
+                        Simple and practical backpack for daily use.
+                    </p>
+
+                    <div class="price">
+                        ₹1,199
+                    </div>
+
+                    <a class="btn" href="https://wa.me/917976987157?text=Hi%20GK%20Digital%2C%20I%20am%20interested%20in%20Everyday%20Backpack." target="_blank">
+                    Enquire on WhatsApp
+                </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>
+            Built for Local Businesses.
+        </h2>
+
+        <p>
+            GK Digital helps local businesses move from traditional offline selling to a modern online presence through websites, digital catalogues, social media and WhatsApp Business.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026 GK Digital · Product Catalogue Demo
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function filterProducts(category, button) {
+
+            const products = document.querySelectorAll(".product");
+
+            const buttons = document.querySelectorAll(".categories button");
+
+            buttons.forEach(function(btn) {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            products.forEach(function(product) {
+
+                if (category === "all") {
+
+                    product.style.display = "block";
+
+                } else if (product.dataset.category === category) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+    </script>
+
+</body>
+
+</html>
